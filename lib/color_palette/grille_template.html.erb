@@ -91,7 +91,7 @@
 
       <form id="form" action="/add_word">
         <input type="text" name="word" />
-        <select name="palette">
+        <select name="palette_name">
           <% @palettes.keys.each do |palette_name| %>
             <option value="<%= palette_name %>"><%= palette_name %></option>
           <% end %>
