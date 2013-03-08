@@ -16,4 +16,4 @@ if ARGV.empty?
 end
 
 ColorPalette.palettes_config = ARGV.first
-ColorPalette::Server.run!
+ColorPalette::Grille.run!
