@@ -105,7 +105,7 @@ ColorPallete comes with a usefull _command_ that you can use to test your _palet
     color_palette_grille <palettes_file_path.json>
     open localhost:4567
 
-(You should install `sinatra` gem first due is not part of the required dependencies.)
+(You should install `sinatra` gem first due is not part of the required dependencies)
 
 
 

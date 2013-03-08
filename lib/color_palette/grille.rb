@@ -13,6 +13,6 @@ class ColorPalette::Grille < Sinatra::Base
   end
 
   get "/add_word" do
-    ColorPalette::Helper.label(params[:word], params[:palette_name])
+    "<li>#{ColorPalette::Helper.label(params[:word], params[:palette_name])}</li>"
   end
 end
