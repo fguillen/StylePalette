@@ -1,6 +1,8 @@
 require "json"
 require "ostruct"
+
 require_relative "color_palette/version"
+require_relative "color_palette/helper"
 
 module ColorPalette
   def self.test_palettes( file_path = nil )
