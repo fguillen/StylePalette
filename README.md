@@ -6,7 +6,7 @@ When you have a bunch of _tags_ and you want to render them in a colorize way yo
 
 ColorPalette offers a json based configured color collections that can be associate with words.
 
-ColorPalette offers also helpers to render already styled `<label>` elements.
+ColorPalette offers also helpers to render already styled `.label` elements.
 
 
 
@@ -20,8 +20,8 @@ ColorPalette offers also helpers to render already styled `<label>` elements.
 
     ColorPalette.color("cat", :tags).background # => #f5abd5
     ColorPalette.color("cat", :tags).foreground # => #000
-    ColorPalette::Helper.style("cat", :tags)) # => background-color: #f5abd5; color: #000;
-    ColorPalette::Helper.label("cat", :tags)) # => <span class="label" style="background-color: #f5abd5; color: #000">cat</span>
+    ColorPalette::Helper.style("cat", :tags) # => background-color: #f5abd5; color: #000;
+    ColorPalette::Helper.label("cat", :tags) # => <span class="label" style="background-color: #f5abd5; color: #000">cat</span>
 
 ## Configuration & Initialization
 
@@ -50,7 +50,7 @@ Then initialize ColorPalette this way:
 
 ## Word/Color assignment
 
-In the basic configuration ColorPallete takes a random _color_ for each _word_ (always the same color for each word), this is very helpful when you don't really care about the associated color for each word, for example if you have docens of _tags_ you are not gonna assign one specific color to each _tag_ just create a big enough palette and let ColorPalette to choose.
+In the basic configuration ColorPallete takes a random _color_ for each _word_ (**always the same color for each word**), this is very helpful when you don't really care about the associated color for each word, for example if you have docens of _tags_ you are not gonna assign one specific color to each _tag_ just create a big enough palette and let ColorPalette to choose.
 
 But if you want to _force_ a color for an specific word you can do it using the special _regex_ attribute for a color in this way:
 
@@ -65,6 +65,37 @@ Now if the _word_ is **blocked** then the last color is gonna be choosen.
 As you can guess, any valid _regex_ can be used in this field.
 
 Check the [examples in the tests](https://github.com/fguillen/ColorPalette/blob/master/test/color_palette_test.rb)
+
+Also check the next examples:
+
+### Number asignment
+
+	"number": [
+	  { "background": "#CCCCCC", "foreground": "#000", "regex": "^0$" },
+	  { "background": "#91E391", "foreground": "#000", "regex": "^[^-]" },
+	  { "background": "#E68585", "foreground": "#000", "regex": "^-" }
+	],
+	
+	ColorPalette::Helper.label(0, :number) # => <span class="label" style="background-color: #CCCCCC; color: #000">0</span>
+	ColorPalette::Helper.label(123, :number) # => <span class="label" style="background-color: #91E391; color: #000">123</span>
+	ColorPalette::Helper.label(-99, :number) # => <span class="label" style="background-color: #E68585; color: #000">-99</span>
+
+* For zero the first color will be choosen
+* For positive numbers the second color will be choosen
+* For negative numbers the last color while be choosen
+
+### Boolean asignment
+
+	"boolean": [
+	  { "background": "#91E391", "foreground": "#000", "regex": "^(yes|1|true)$" },
+	  { "background": "#E68585", "foreground": "#000", "regex": "^(no|0|false)$" }
+	],
+	
+	ColorPalette::Helper.label(0, :boolean) # => <span class="label" style="background-color: #91E391; color: #000">0</span>
+	ColorPalette::Helper.label("no", :boolean) # => <span class="label" style="background-color: #91E391; color: #000">no</span>
+	ColorPalette::Helper.label("yes", :boolean) # => <span class="label" style="background-color: #E68585; color: #000">yes</span>
+	ColorPalette::Helper.label(true, :boolean) # => <span class="label" style="background-color: #E68585; color: #000">true</span>
+
 
 ## The Grille web page
 
