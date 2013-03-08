@@ -1,0 +1,114 @@
+<html>
+  <head>
+    <title>ColorPalette play ground</title>
+    <link rel="stylesheet" type="text/css" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
+    <style>
+      body {
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      h1 {
+        font-size: 80px;
+        font-weight: bold;
+        padding: 10px;
+
+        background-image: -webkit-gradient(
+          linear,
+          left top,
+          right top,
+          color-stop(0.00, red),
+          color-stop(16%, orange),
+          color-stop(32%, yellow),
+          color-stop(48%, green),
+          color-stop(60%, blue),
+          color-stop(76%, indigo),
+          color-stop(1.00, violet)
+        );
+
+        border-bottom: 5px solid black;
+      }
+
+      h2 {
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      input, select {
+        border: 1px solid black;
+        padding: 5px;
+        font-size: 20px;
+      }
+
+      .label {
+        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        padding: 5px;
+        font-size: 10px;
+        font-weight: bold;
+      }
+
+      #live_labels .label {
+        border-radius: 3px;
+        padding: 4px 7px;
+        margin-right: 5px;
+      }
+
+      #live_labels {
+        padding: 20px;
+      }
+
+    </style>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script>
+      $(function(){
+        $("#form").on("submit", function(){
+          var form = $("#form");
+          $.ajax({
+            type: form.attr("method"),
+            url: form.attr("action"),
+            data: form.serialize(),
+            success: function (data) {
+              console.log(data);
+              $("#live_labels").prepend(data);
+            }
+          });
+
+          return false;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>ColorPalette playground</h1>
+
+    <div id="add_word_form">
+      <h2>Test palettes</h2>
+
+      <form id="form" action="/add_word">
+        <input type="text" name="word" />
+        <select name="palette">
+          <% @palettes.keys.each do |palette_name| %>
+            <option value="<%= palette_name %>"><%= palette_name %></option>
+          <% end %>
+        </select>
+        <input type="submit" value="Test &gt;&gt;" />
+      </form>
+      <div id="live_labels">
+      </div>
+    </div>
+
+    <div id="palettes_grille">
+      <% @palettes.each do |palette_name, palette| %>
+        <div class="palette">
+          <h2><%= palette_name %></h2>
+          <ul>
+            <% palette.each do |color| %>
+              <li class="label" style="background-color: <%= color.background %>; color: <%= color.foreground %>"><%= html_escape color.inspect %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+
+  </body>
+</html>

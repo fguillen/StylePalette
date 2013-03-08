@@ -25,9 +25,10 @@ module ColorPalette
   end
 
   def self.color(word, palette_name)
-    raise ArgumentError, "palette not found '#{palette_name}'" unless palettes[palette_name]
-
     word = word.to_s
+    palette_name = palette_name.to_sym
+
+    raise ArgumentError, "Palette not found '#{palette_name}'" unless palettes[palette_name]
     color_by_regex(word, palette_name) || color_by_index(word, palette_name)
   end
 
@@ -51,6 +52,6 @@ module ColorPalette
   end
 
   def self.palettes
-    @palettes
+    @palettes || raise(Exception, "Palettes not initialized, try `ColorPalette.palettes_config = <file_path>`")
   end
 end

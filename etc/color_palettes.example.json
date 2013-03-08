@@ -9,18 +9,18 @@
     { "background": "#afaa78", "foreground": "#000" },
     { "background": "#C2BB68", "foreground": "#000" },
     { "background": "#63E17C", "foreground": "#000" },
-    { "background": "#34B4C8", "foreground": "#000" },
+    { "background": "#34B4C8", "foreground": "#000" }
   ],
 
   "number": [
     { "background": "#CCCCCC", "foreground": "#000", "regex": "^0$" },
-    { "background": "#E68585", "foreground": "#000", "regex": "^[^-]" },
-    { "background": "#91E391", "foreground": "#000", "regex": "^-" },
+    { "background": "#91E391", "foreground": "#000", "regex": "^[^-]" },
+    { "background": "#E68585", "foreground": "#000", "regex": "^-" }
   ],
 
   "boolean": [
     { "background": "#91E391", "foreground": "#000", "regex": "yes" },
-    { "background": "#E68585", "foreground": "#000", "regex": "no" },
+    { "background": "#E68585", "foreground": "#000", "regex": "no" }
   ],
 
   "tags": [

@@ -40,8 +40,22 @@ class ColorPaletteTest < MiniTest::Unit::TestCase
   end
 
   def test_raise_error_if_palette_name_not_found
-    assert_raises(ArgumentError) do
-      ColorPalette.color("a", :not_found)
-    end
+    exception =
+      assert_raises(ArgumentError) do
+        ColorPalette.color("a", :not_found)
+      end
+
+    assert_match(/Palette not found/, exception.message)
+  end
+
+  def test_raise_error_if_palettes_not_initialized
+    ColorPalette.instance_variable_set(:@palettes, nil)
+
+    exception =
+      assert_raises(Exception) do
+        ColorPalette.color("a", :tags)
+      end
+
+    assert_match(/Palettes not initialized/, exception.message)
   end
 end
