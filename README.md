@@ -110,9 +110,9 @@ Also check the next examples:
 	ColorPalette::Helper.label(123, :number) # => <span class="label" style="background-color: #91E391; color: #000">123</span>
 	ColorPalette::Helper.label(-99, :number) # => <span class="label" style="background-color: #E68585; color: #000">-99</span>
 
-* For zero the first color will be choosen
-* For positive numbers the second color will be choosen
-* For negative numbers the last color while be choosen
+* For _zero_ the first color will be choosen
+* For _positive numbers_ the second color will be choosen
+* For _negative numbers_ the last color while be choosen
 
 ### Boolean asignment
 
