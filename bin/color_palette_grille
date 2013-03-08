@@ -10,6 +10,8 @@ rescue LoadError
   require "color_palette"
 end
 
+require_relative "../lib/color_palette/grille"
+
 if ARGV.empty?
   puts "Use: `color_palette_grille <palettes_file_path>`"
   exit 1
