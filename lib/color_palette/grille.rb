@@ -1,16 +1,7 @@
 require "sinatra/base"
 require "erb"
 
-require_relative "../color_palette"
-
-if ARGV.empty?
-  puts "Use: `XXX <palettes_file_path>`"
-  exit 1
-end
-
-ColorPalette.palettes_config = ARGV.first
-
-class ColorPalette::Server < Sinatra::Base
+class ColorPalette::Grille < Sinatra::Base
   include ERB::Util
 
   get "/" do
@@ -22,5 +13,3 @@ class ColorPalette::Server < Sinatra::Base
     ColorPalette::Helper.label(params[:word], params[:palette])
   end
 end
-
-ColorPalette::Server.run!
