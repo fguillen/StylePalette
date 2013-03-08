@@ -6,6 +6,6 @@ module ColorPalette::Helper
 
   def self.style(word, palette_name)
     color = ColorPalette.color(word, palette_name)
-    "background-color: #{color.background}; color: #{color.foreground}"
+    "background-color: #{color.background}; color: #{color.foreground};"
   end
 end
