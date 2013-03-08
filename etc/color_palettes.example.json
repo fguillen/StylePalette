@@ -19,8 +19,8 @@
   ],
 
   "boolean": [
-    { "background": "#91E391", "foreground": "#000", "regex": "yes" },
-    { "background": "#E68585", "foreground": "#000", "regex": "no" }
+    { "background": "#91E391", "foreground": "#000", "regex": "^(yes|1|true)$" },
+    { "background": "#E68585", "foreground": "#000", "regex": "^(no|0|false)$" }
   ],
 
   "tags": [

@@ -9,7 +9,6 @@ ColorPalette offers a json based configured color collections that can be associ
 ColorPalette offers also helpers to render already styled `.label` elements.
 
 
-
 ## Installation
 
     gem "color_palette"
@@ -47,6 +46,37 @@ Check a [configuration example file](https://github.com/fguillen/ColorPalette/bl
 Then initialize ColorPalette this way:
 
     ColorPalette.palettes_config = <palettes_file_path.json>
+    
+## Rails integration
+
+Configuration:
+
+    # config/color_palettes.json
+    {
+      "states": [
+        { "background": "#cd8745", "foreground": "#000" },
+        { "background": "#82d37c", "foreground": "#000" },
+        { "background": "#81dbde", "foreground": "#000" }
+      ]
+    }
+    
+Initialization:
+    
+    # config/initializers/color_palette.rb
+    ColorPalette.palettes_config = "#{Rails.root}/config/color_palettes.json"
+    
+Helper:
+
+    # app/helpers/application_helper.rb
+    def render_label(word, palette_name)
+      ColorPalette::Helper.label(word, palette_name).html_safe
+    end
+
+Use:
+
+    # in any template
+    <%= render_label(current_user.state, :states) %>
+
 
 ## Word/Color assignment
 
