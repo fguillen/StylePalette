@@ -1,0 +1,26 @@
+{
+  "states": [
+    { "background": "#cd8745", "foreground": "#000" },
+    { "background": "#82d37c", "foreground": "#000" },
+    { "background": "#81dbde", "foreground": "#000" },
+    { "background": "#90a26b", "foreground": "#000", "regex": "blocked" }
+  ],
+
+  "number": [
+    { "background": "zero", "foreground": "#000", "regex": "^0$" },
+    { "background": "positive", "foreground": "#000", "regex": "^[^-]" },
+    { "background": "negative", "foreground": "#000", "regex": "^-" }
+  ],
+
+  "boolean": [
+    { "background": "yes", "foreground": "#000", "regex": "^(yes|1|true)$" },
+    { "background": "no", "foreground": "#000", "regex": "^(no|0|false)$" }
+  ],
+
+  "tags": [
+    { "background": "#f5acb0", "foreground": "#000" },
+    { "background": "#f5abd5", "foreground": "#000" },
+    { "background": "#e7abf5", "foreground": "#000" },
+    { "background": "#b2a6f5", "foreground": "#000" }
+  ]
+}
