@@ -14,11 +14,12 @@ class GrilleTest < MiniTest::Unit::TestCase
 
   def test_index
     get "/"
-    assert_match "<li class=\"label\" style=\"background-color: #cd8745; color: #000\">{:background=&gt;&quot;#cd8745&quot;, :foreground=&gt;&quot;#000&quot;}</li>", last_response.body
+
+    assert_match "<li class=\"label\" style=\"style 1\">{:style=&gt;&quot;style 1&quot;}</li>", last_response.body
   end
 
   def test_add_word
     get "/add_word", :word => "test", :palette_name => "tags"
-    assert_equal "<li><span class=\"label\" style=\"background-color: #f5acb0; color: #000;\">test</span></li>", last_response.body
+    assert_equal "<li><span class=\"label\" style=\"style 9\">test</span></li>", last_response.body
   end
 end

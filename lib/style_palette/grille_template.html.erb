@@ -40,7 +40,7 @@
         width: 130px;
       }
 
-      ul.colors li {
+      ul.brushes li {
         float: left;
         margin: 2px;
       }
@@ -92,7 +92,7 @@
           <input type="submit" value="Test &gt;&gt;" />
         </form>
         <div id="live_labels">
-          <ul class="colors">
+          <ul class="brushes">
           </ul>
         </div>
       </div>
@@ -101,9 +101,9 @@
         <% @palettes.each do |palette_name, palette| %>
           <div class="palette block">
             <h2><%= palette_name %></h2>
-            <ul class="colors">
-              <% palette.each do |color| %>
-                <li class="label" style="background-color: <%= color.background %>; color: <%= color.foreground %>"><%= html_escape color.marshal_dump %></li>
+            <ul class="brushes">
+              <% palette.each do |brush| %>
+                <li class="label" style="<%= brush.style %>"><%= html_escape brush.marshal_dump %></li>
               <% end %>
             </ul>
           </div>

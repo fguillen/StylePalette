@@ -15,12 +15,12 @@ StylePalette offers also helpers to render already styled `.label` elements.
 
 ## Usage
 
-    StylePalette.color(<word>, <palette_name>)
+    StylePalette.brush(<word>, <palette_name>)
 
-    StylePalette.color("cat", :tags).background # => #f5abd5
-    StylePalette.color("cat", :tags).foreground # => #000
+    StylePalette.brush("cat", :tags).background # => #f5abd5
+    StylePalette.brush("cat", :tags).foreground # => #000
     StylePalette::Helper.style("cat", :tags) # => background-color: #f5abd5; color: #000;
-    StylePalette::Helper.label("cat", :tags) # => <span class="label" style="background-color: #f5abd5; color: #000">cat</span>
+    StylePalette::Helper.label("cat", :tags) # => <span class="label" style="background-color: #f5abd5; color: #000;">cat</span>
 
 ## Configuration & Initialization
 
@@ -28,16 +28,16 @@ Create a _json_ file with the name of the **palettes** and with an array of _col
 
     {
       "states": [
-        { "background": "#cd8745", "foreground": "#000" },
-        { "background": "#82d37c", "foreground": "#000" },
-        { "background": "#81dbde", "foreground": "#000" }
+        { "style": "background-color: #cd8745; color: #000;" },
+        { "style": "background-color: #82d37c; color: #000;" },
+        { "style": "background-color: #81dbde; color: #000;" }
       ],
 
       "tags": [
-        { "background": "#f5acb0", "foreground": "#000" },
-        { "background": "#f5abd5", "foreground": "#000" },
-        { "background": "#e7abf5", "foreground": "#000" },
-        { "background": "#b2a6f5", "foreground": "#000" }
+        { "style": "background-color: #f5acb0; color: #000;" },
+        { "style": "background-color: #f5abd5; color: #000;" },
+        { "style": "background-color: #e7abf5; color: #000;" },
+        { "style": "background-color: #b2a6f5; color: #000;" }
       ]
     }
 
@@ -54,9 +54,9 @@ Configuration:
     # config/style_palettes.json
     {
       "states": [
-        { "background": "#cd8745", "foreground": "#000" },
-        { "background": "#82d37c", "foreground": "#000" },
-        { "background": "#81dbde", "foreground": "#000" }
+        { "style": "background-color: #cd8745; color: #000;" },
+        { "style": "background-color: #82d37c; color: #000;" },
+        { "style": "background-color: #81dbde; color: #000;" }
       ]
     }
 
@@ -85,9 +85,9 @@ In the basic configuration ColorPallete takes a random _color_ for each _word_ (
 But if you want to _force_ a color for an specific word you can do it using the special _regex_ attribute for a color in this way:
 
     "states": [
-      { "background": "#cd8745", "foreground": "#000" },
-      { "background": "#82d37c", "foreground": "#000" },
-      { "background": "#81dbde", "foreground": "#000", "regex": "blocked" }
+      { "style": "background-color: #cd8745; color: #000;" },
+      { "style": "background-color: #82d37c; color: #000;" },
+      { "style": "background-color: #81dbde; color: #000;", "regex": "blocked" }
     ],
 
 Now if the _word_ is **blocked** then the last color is gonna be choosen.
@@ -101,14 +101,14 @@ Also check the next examples:
 ### Number asignment
 
 	"number": [
-	  { "background": "#CCCCCC", "foreground": "#000", "regex": "^0$" },
-	  { "background": "#91E391", "foreground": "#000", "regex": "^[^-]" },
-	  { "background": "#E68585", "foreground": "#000", "regex": "^-" }
+	  { "style": "background-color: #CCCCCC; color: #000;", "regex": "^0$" },
+	  { "style": "background-color: #91E391; color: #000;", "regex": "^[^-]" },
+	  { "style": "background-color: #E68585; color: #000;", "regex": "^-" }
 	],
 
-	StylePalette::Helper.label(0, :number) # => <span class="label" style="background-color: #CCCCCC; color: #000">0</span>
-	StylePalette::Helper.label(123, :number) # => <span class="label" style="background-color: #91E391; color: #000">123</span>
-	StylePalette::Helper.label(-99, :number) # => <span class="label" style="background-color: #E68585; color: #000">-99</span>
+	StylePalette::Helper.label(0, :number) # => <span class="label" style="background-color: #CCCCCC; color: #000;">0</span>
+	StylePalette::Helper.label(123, :number) # => <span class="label" style="background-color: #91E391; color: #000;">123</span>
+	StylePalette::Helper.label(-99, :number) # => <span class="label" style="background-color: #E68585; color: #000;">-99</span>
 
 * For _zero_ the first color will be choosen
 * For _positive numbers_ the second color will be choosen
@@ -117,14 +117,14 @@ Also check the next examples:
 ### Boolean asignment
 
 	"boolean": [
-	  { "background": "#91E391", "foreground": "#000", "regex": "^(yes|1|true)$" },
-	  { "background": "#E68585", "foreground": "#000", "regex": "^(no|0|false)$" }
+	  { "style": "background-color: #91E391; color: #000;", "regex": "^(yes|1|true)$" },
+	  { "style": "background-color: #E68585; color: #000;", "regex": "^(no|0|false)$" }
 	],
 
-	StylePalette::Helper.label(0, :boolean) # => <span class="label" style="background-color: #91E391; color: #000">0</span>
-	StylePalette::Helper.label("no", :boolean) # => <span class="label" style="background-color: #91E391; color: #000">no</span>
-	StylePalette::Helper.label("yes", :boolean) # => <span class="label" style="background-color: #E68585; color: #000">yes</span>
-	StylePalette::Helper.label(true, :boolean) # => <span class="label" style="background-color: #E68585; color: #000">true</span>
+	StylePalette::Helper.label(0, :boolean) # => <span class="label" style="background-color: #91E391; color: #000;">0</span>
+	StylePalette::Helper.label("no", :boolean) # => <span class="label" style="background-color: #91E391; color: #000;">no</span>
+	StylePalette::Helper.label("yes", :boolean) # => <span class="label" style="background-color: #E68585; color: #000;">yes</span>
+	StylePalette::Helper.label(true, :boolean) # => <span class="label" style="background-color: #E68585; color: #000;">true</span>
 
 
 ## The Grille web page
