@@ -2,7 +2,7 @@
 
 # StylePalette
 
-When you have a bunch of _tags_ and you want to render them in a colorize way you can implement your own colorize system or you can use **ColorPallete**.
+When you have a bunch of _tags_ and you want to render them in a colorize way you can implement your own colorize system or you can use **StylePalette**.
 
 StylePalette offers a json based configured color collections that can be associate with words.
 
@@ -83,7 +83,7 @@ Use:
 
 ## Word/Color assignment
 
-In the basic configuration ColorPallete takes a random _color_ for each _word_ (**always the same color for each word**), this is very helpful when you don't really care about the associated color for each word, for example if you have docens of _tags_ you are not gonna assign one specific color to each _tag_ just create a big enough palette and let StylePalette to choose.
+In the basic configuration StylePalette takes a random _color_ for each _word_ (**always the same color for each word**), this is very helpful when you don't really care about the associated color for each word, for example if you have docens of _tags_ you are not gonna assign one specific color to each _tag_ just create a big enough palette and let StylePalette to choose.
 
 But if you want to _force_ a color for an specific word you can do it using the special _regex_ attribute for a color in this way:
 
