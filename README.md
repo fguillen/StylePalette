@@ -139,16 +139,9 @@ Also check the next examples:
   	StylePalette::Helper.label(true, :boolean) # => <span class="label" style="background-color: #E68585; color: #000;">true</span>
 
 
-## The Grille web page
+## The Gallery playground
 
-ColorPallete comes with a usefull _command_ that you can use to test your _palettes_ in an adhoc web page:
-
-    gem install sinatra # if not installed yet
-    style_palette_grille <palettes_file_path.json>
-    open localhost:4567
-
-(You should install `sinatra` gem first due is not part of the required dependencies)
-
+You can check your _style palettes_ in the [StylePaletteGallery](http://spg.fernandoguillen.info) or [fork the app](https://raw.github.com/fguillen/StylePaletteGallery) and create your own playground.
 
 
 

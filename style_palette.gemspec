@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = StylePalette::VERSION
   spec.authors       = ["Fernando Guillen"]
   spec.email         = ["fguillen.mail@gmail.com"]
-  spec.description   = "Background and Foreground colors for Words"
-  spec.summary       = "Background and Foreground colors for Words"
-  spec.homepage      = ""
+  spec.description   = "Create collections of stylized labels without effort"
+  spec.summary       = "Create collections of stylized labels without effort"
+  spec.homepage      = "https://raw.github.com/fguillen/StylePalette"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
@@ -21,5 +21,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "mocha"
-  spec.add_development_dependency "rack-test"
 end
