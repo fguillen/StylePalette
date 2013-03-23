@@ -131,7 +131,7 @@ Also check the next examples:
 
 ColorPallete comes with a usefull _command_ that you can use to test your _palettes_ in an adhoc web page:
 
-	gem install sinatra # if not installed yet
+	  gem install sinatra # if not installed yet
     style_palette_grille <palettes_file_path.json>
     open localhost:4567
 
