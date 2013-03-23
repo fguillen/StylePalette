@@ -100,15 +100,15 @@ Also check the next examples:
 
 ### Number asignment
 
-	"number": [
-	  { "style": "background-color: #CCCCCC; color: #000;", "regex": "^0$" },
-	  { "style": "background-color: #91E391; color: #000;", "regex": "^[^-]" },
-	  { "style": "background-color: #E68585; color: #000;", "regex": "^-" }
-	],
+  	"number": [
+  	  { "style": "background-color: #CCCCCC; color: #000;", "regex": "^0$" },
+  	  { "style": "background-color: #91E391; color: #000;", "regex": "^[^-]" },
+  	  { "style": "background-color: #E68585; color: #000;", "regex": "^-" }
+  	],
 
-	StylePalette::Helper.label(0, :number) # => <span class="label" style="background-color: #CCCCCC; color: #000;">0</span>
-	StylePalette::Helper.label(123, :number) # => <span class="label" style="background-color: #91E391; color: #000;">123</span>
-	StylePalette::Helper.label(-99, :number) # => <span class="label" style="background-color: #E68585; color: #000;">-99</span>
+  	StylePalette::Helper.label(0, :number) # => <span class="label" style="background-color: #CCCCCC; color: #000;">0</span>
+  	StylePalette::Helper.label(123, :number) # => <span class="label" style="background-color: #91E391; color: #000;">123</span>
+  	StylePalette::Helper.label(-99, :number) # => <span class="label" style="background-color: #E68585; color: #000;">-99</span>
 
 * For _zero_ the first color will be choosen
 * For _positive numbers_ the second color will be choosen
@@ -116,15 +116,15 @@ Also check the next examples:
 
 ### Boolean asignment
 
-	"boolean": [
-	  { "style": "background-color: #91E391; color: #000;", "regex": "^(yes|1|true)$" },
-	  { "style": "background-color: #E68585; color: #000;", "regex": "^(no|0|false)$" }
-	],
+  	"boolean": [
+  	  { "style": "background-color: #91E391; color: #000;", "regex": "^(yes|1|true)$" },
+  	  { "style": "background-color: #E68585; color: #000;", "regex": "^(no|0|false)$" }
+  	],
 
-	StylePalette::Helper.label(0, :boolean) # => <span class="label" style="background-color: #91E391; color: #000;">0</span>
-	StylePalette::Helper.label("no", :boolean) # => <span class="label" style="background-color: #91E391; color: #000;">no</span>
-	StylePalette::Helper.label("yes", :boolean) # => <span class="label" style="background-color: #E68585; color: #000;">yes</span>
-	StylePalette::Helper.label(true, :boolean) # => <span class="label" style="background-color: #E68585; color: #000;">true</span>
+  	StylePalette::Helper.label(0, :boolean) # => <span class="label" style="background-color: #91E391; color: #000;">0</span>
+  	StylePalette::Helper.label("no", :boolean) # => <span class="label" style="background-color: #91E391; color: #000;">no</span>
+  	StylePalette::Helper.label("yes", :boolean) # => <span class="label" style="background-color: #E68585; color: #000;">yes</span>
+  	StylePalette::Helper.label(true, :boolean) # => <span class="label" style="background-color: #E68585; color: #000;">true</span>
 
 
 ## The Grille web page
