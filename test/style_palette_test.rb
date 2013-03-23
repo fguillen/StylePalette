@@ -65,4 +65,9 @@ class StylePaletteTest < MiniTest::Unit::TestCase
 
     assert_match(/Palettes not initialized/, exception.message)
   end
+
+  def test_palettes_config_actually_call_paletter_config_json
+    StylePalette.expects(:palettes_config_json).with("json content")
+    StylePalette.palettes_config = "#{FIXTURES}/file.json"
+  end
 end

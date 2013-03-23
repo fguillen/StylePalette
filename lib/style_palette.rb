@@ -37,9 +37,14 @@ module StylePalette
   end
 
   def self.palettes_config=(style_palettes_file_path)
+    json = File.read(style_palettes_file_path)
+    palettes_config_json json
+  end
+
+  def self.palettes_config_json(style_palettes_json)
     palettes = {}
 
-    JSON.parse(File.read(style_palettes_file_path)).each do |palette_name, palette|
+    JSON.parse(style_palettes_json).each do |palette_name, palette|
       palettes[palette_name.to_sym] = palette.map { |e| OpenStruct.new(e) }
     end
 
