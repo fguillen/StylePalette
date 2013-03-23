@@ -1,15 +1,15 @@
 require_relative "test_helper"
-require_relative "../lib/color_palette/grille"
+require_relative "../lib/style_palette/grille"
 
 class GrilleTest < MiniTest::Unit::TestCase
   include Rack::Test::Methods
 
   def setup
-    ColorPalette.palettes_config = "#{FIXTURES}/color_palettes.json"
+    StylePalette.palettes_config = "#{FIXTURES}/style_palettes.json"
   end
 
   def app
-    ColorPalette::Grille
+    StylePalette::Grille
   end
 
   def test_index

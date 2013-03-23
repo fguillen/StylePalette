@@ -1,1 +1,1 @@
-rvm use --create ruby-1.9.3-p374@color_palette
+rvm use --create ruby-1.9.3-p374@style_palette

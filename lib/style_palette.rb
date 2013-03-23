@@ -1,10 +1,10 @@
 require "json"
 require "ostruct"
 
-require_relative "color_palette/version"
-require_relative "color_palette/helper"
+require_relative "style_palette/version"
+require_relative "style_palette/helper"
 
-module ColorPalette
+module StylePalette
   def self.test_palettes( file_path = nil )
     result = ""
 
@@ -41,10 +41,10 @@ module ColorPalette
     palettes[palette_name][ index % palettes[palette_name].length ]
   end
 
-  def self.palettes_config=(color_palettes_file_path)
+  def self.palettes_config=(style_palettes_file_path)
     palettes = {}
 
-    JSON.parse(File.read(color_palettes_file_path)).each do |palette_name, palette|
+    JSON.parse(File.read(style_palettes_file_path)).each do |palette_name, palette|
       palettes[palette_name.to_sym] = palette.map { |e| OpenStruct.new(e) }
     end
 
@@ -52,6 +52,6 @@ module ColorPalette
   end
 
   def self.palettes
-    @palettes || raise(Exception, "Palettes not initialized, try `ColorPalette.palettes_config = <file_path>`")
+    @palettes || raise(Exception, "Palettes not initialized, try `StylePalette.palettes_config = <file_path>`")
   end
 end

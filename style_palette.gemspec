@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'color_palette/version'
+require 'style_palette/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "color_palette"
-  spec.version       = ColorPalette::VERSION
+  spec.name          = "style_palette"
+  spec.version       = StylePalette::VERSION
   spec.authors       = ["Fernando Guillen"]
   spec.email         = ["fguillen.mail@gmail.com"]
   spec.description   = "Background and Foreground colors for Words"
