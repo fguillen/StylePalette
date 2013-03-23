@@ -98,7 +98,7 @@ Check the [examples in the tests](https://github.com/fguillen/StylePalette/blob/
 
 Also check the next examples:
 
-### Number asignment
+### Number assignment
 
   	"number": [
   	  { "style": "background-color: #CCCCCC; color: #000;", "regex": "^0$" },
@@ -114,7 +114,19 @@ Also check the next examples:
 * For _positive numbers_ the second color will be choosen
 * For _negative numbers_ the last color while be choosen
 
-### Boolean asignment
+### Range assignment
+
+    "ranges": [
+      { "style": "background-color: #fff385; color: #000;", "range": "..0" },
+      { "style": "background-color: #85ffd0; color: #000;", "range": "0..20" },
+      { "style": "background-color: #85c2ff; color: #000;", "range": "20..80" },
+      { "style": "background-color: #ff85f3; color: #000;", "range": "80.." }
+    ]
+
+    StylePalette::Helper.label(0, :ranges) # => <span class="label" style="background-color: #fff385; color: #000;">0</span>
+    StylePalette::Helper.label(45, :ranges) # => <span class="label" style="background-color: #85c2ff; color: #000;">45</span>
+
+### Boolean assignment
 
   	"boolean": [
   	  { "style": "background-color: #91E391; color: #000;", "regex": "^(yes|1|true)$" },

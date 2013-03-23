@@ -22,5 +22,12 @@
     { "style": "style 10" },
     { "style": "style 11" },
     { "style": "style 12" }
+  ],
+
+  "ranges": [
+    { "style": "style 13", "range": "..0" },
+    { "style": "style 14", "range": "0..20" },
+    { "style": "style 15", "range": "20..80" },
+    { "style": "style 16", "range": "80.." }
   ]
 }
