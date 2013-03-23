@@ -21,11 +21,11 @@ class StylePaletteTest < MiniTest::Unit::TestCase
 
   def test_style_by_range
     assert_equal("style 13" , StylePalette.brush("-10", :ranges).style )
-    # assert_equal("style 14" , StylePalette.brush("0", :ranges).style )
-    # assert_equal("style 14" , StylePalette.brush("20", :ranges).style )
-    # assert_equal("style 15" , StylePalette.brush("40", :ranges).style )
-    # assert_equal("style 16" , StylePalette.brush("85", :ranges).style )
-    # assert_equal("style 16" , StylePalette.brush("99999", :ranges).style )
+    assert_equal("style 13" , StylePalette.brush("0", :ranges).style )
+    assert_equal("style 14" , StylePalette.brush("20", :ranges).style )
+    assert_equal("style 15" , StylePalette.brush("40", :ranges).style )
+    assert_equal("style 16" , StylePalette.brush("85", :ranges).style )
+    assert_equal("style 16" , StylePalette.brush("99999", :ranges).style )
   end
 
   def test_style_by_regex_numbers

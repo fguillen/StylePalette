@@ -1,17 +1,14 @@
 ![style_palette](https://raw.github.com/fguillen/StylePalette/master/etc/style_palette.png)
 
-# StylePalette
+# StylePaletteGallery
 
-When you have a bunch of _tags_ and you want to render them in a colorize way you can implement your own colorize system or you can use **ColorPallete**.
-
-StylePalette offers a json based configured color collections that can be associate with words.
-
-StylePalette offers also helpers to render already styled `.label` elements.
-
+Gallery playground to test the gem [StylePalette](https://github.com/fguillen/StylePalette)
 
 ## Installation
 
-    gem "style_palette"
+    git clone git@github.com:fguillen/StylePaletteGallery.git
+    cd StylePaletteGallery
+
 
 ## Usage
 

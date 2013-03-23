@@ -5,6 +5,8 @@ require_relative "style_palette/version"
 require_relative "style_palette/helper"
 
 module StylePalette
+  attr_reader :palettes_config
+
   def self.brush(word, palette_name)
     word = word.to_s
     palette_name = palette_name.to_sym
@@ -37,11 +39,17 @@ module StylePalette
   end
 
   def self.palettes_config=(style_palettes_file_path)
-    json = File.read(style_palettes_file_path)
-    palettes_config_json json
+    style_palettes_json = File.read(style_palettes_file_path)
+    palettes_config_json style_palettes_json
+  end
+
+  def self.palettes_config
+    @palettes_config
   end
 
   def self.palettes_config_json(style_palettes_json)
+    @palettes_config = style_palettes_json
+
     palettes = {}
 
     JSON.parse(style_palettes_json).each do |palette_name, palette|
@@ -49,6 +57,11 @@ module StylePalette
     end
 
     @palettes = palettes
+  end
+
+  def self.reset
+    @palettes = nil
+    @palettes_config = nil
   end
 
   def self.palettes
