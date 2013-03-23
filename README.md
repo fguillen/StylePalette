@@ -138,7 +138,7 @@ Also check the next examples:
 
 ## The Gallery playground
 
-You can check your _style palettes_ in the [StylePaletteGallery](http://spg.fernandoguillen.info) or [fork the app](https://raw.github.com/fguillen/StylePaletteGallery) and create your own playground.
+You can check your _style palettes_ in the [StylePaletteGallery](http://stylepalettegallery.fernandoguillen.info/) or [fork the app](https://github.com/fguillen/StylePaletteGallery) and create your own playground.
 
 
 

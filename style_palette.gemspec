@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["fguillen.mail@gmail.com"]
   spec.description   = "Create collections of stylized labels without effort"
   spec.summary       = "Create collections of stylized labels without effort"
-  spec.homepage      = "https://raw.github.com/fguillen/StylePalette"
+  spec.homepage      = "https://github.com/fguillen/StylePalette"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
