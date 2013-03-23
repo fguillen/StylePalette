@@ -1,14 +1,20 @@
 ![style_palette](https://raw.github.com/fguillen/StylePalette/master/etc/style_palette.png)
 
-# StylePaletteGallery
+# StylePalette
 
-Gallery playground to test the gem [StylePalette](https://github.com/fguillen/StylePalette)
+When you have a bunch of _tags_ and you want to render them in a colorize way you can implement your own colorize system or you can use **ColorPallete**.
+
+StylePalette offers a json based configured color collections that can be associate with words.
+
+StylePalette offers also helpers to render already styled `.label` elements.
+
+## The Gallery playground
+
+You can check your _style palettes_ in the [StylePaletteGallery](http://stylepalettegallery.fernandoguillen.info/) or [fork the app](https://github.com/fguillen/StylePaletteGallery) and create your own playground.
 
 ## Installation
 
-    git clone git@github.com:fguillen/StylePaletteGallery.git
-    cd StylePaletteGallery
-
+    gem "style_palette"
 
 ## Usage
 
@@ -136,9 +142,6 @@ Also check the next examples:
   	StylePalette::Helper.label(true, :boolean) # => <span class="label" style="background-color: #E68585; color: #000;">true</span>
 
 
-## The Gallery playground
-
-You can check your _style palettes_ in the [StylePaletteGallery](http://stylepalettegallery.fernandoguillen.info/) or [fork the app](https://github.com/fguillen/StylePaletteGallery) and create your own playground.
 
 
 
