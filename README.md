@@ -10,7 +10,7 @@ StylePalette offers also helpers to render already styled `.label` elements.
 
 ## The Gallery playground
 
-You can check your _style palettes_ in the [StylePaletteGallery](http://stylepalettegallery.fernandoguillen.info/) or [fork the app](https://github.com/fguillen/StylePaletteGallery) and create your own playground.
+You can check your _style palettes_ in the [StylePaletteGallery](http://stylepalettegallery.herokuapp.com/) or [fork the app](https://github.com/fguillen/StylePaletteGallery) and create your own playground.
 
 ## Installation
 
