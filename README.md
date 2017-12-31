@@ -23,7 +23,7 @@ You can check your _style palettes_ in the [StylePaletteGallery](http://stylepal
     StylePalette.brush("cat", :tags).background # => #f5abd5
     StylePalette.brush("cat", :tags).foreground # => #000
     StylePalette::Helper.style("cat", :tags) # => background-color: #f5abd5; color: #000;
-    StylePalette::Helper.label("cat", :tags) # => <span class="label" style="background-color: #f5abd5; color: #000;">cat</span>
+    StylePalette::Helper.label("cat", :tags) # => <span class="badge" style="background-color: #f5abd5; color: #000;">cat</span>
 
 ## Configuration & Initialization
 
@@ -109,9 +109,9 @@ Also check the next examples:
   	  { "style": "background-color: #E68585; color: #000;", "regex": "^-" }
   	],
 
-  	StylePalette::Helper.label(0, :number) # => <span class="label" style="background-color: #CCCCCC; color: #000;">0</span>
-  	StylePalette::Helper.label(123, :number) # => <span class="label" style="background-color: #91E391; color: #000;">123</span>
-  	StylePalette::Helper.label(-99, :number) # => <span class="label" style="background-color: #E68585; color: #000;">-99</span>
+  	StylePalette::Helper.label(0, :number) # => <span class="badge" style="background-color: #CCCCCC; color: #000;">0</span>
+  	StylePalette::Helper.label(123, :number) # => <span class="badge" style="background-color: #91E391; color: #000;">123</span>
+  	StylePalette::Helper.label(-99, :number) # => <span class="badge" style="background-color: #E68585; color: #000;">-99</span>
 
 * For _zero_ the first color will be choosen
 * For _positive numbers_ the second color will be choosen
@@ -126,8 +126,8 @@ Also check the next examples:
       { "style": "background-color: #ff85f3; color: #000;", "range": "80.." }
     ]
 
-    StylePalette::Helper.label(0, :ranges) # => <span class="label" style="background-color: #fff385; color: #000;">0</span>
-    StylePalette::Helper.label(45, :ranges) # => <span class="label" style="background-color: #85c2ff; color: #000;">45</span>
+    StylePalette::Helper.label(0, :ranges) # => <span class="badge" style="background-color: #fff385; color: #000;">0</span>
+    StylePalette::Helper.label(45, :ranges) # => <span class="badge" style="background-color: #85c2ff; color: #000;">45</span>
 
 ### Boolean assignment
 
@@ -136,10 +136,10 @@ Also check the next examples:
   	  { "style": "background-color: #E68585; color: #000;", "regex": "^(no|0|false)$" }
   	],
 
-  	StylePalette::Helper.label(0, :boolean) # => <span class="label" style="background-color: #91E391; color: #000;">0</span>
-  	StylePalette::Helper.label("no", :boolean) # => <span class="label" style="background-color: #91E391; color: #000;">no</span>
-  	StylePalette::Helper.label("yes", :boolean) # => <span class="label" style="background-color: #E68585; color: #000;">yes</span>
-  	StylePalette::Helper.label(true, :boolean) # => <span class="label" style="background-color: #E68585; color: #000;">true</span>
+  	StylePalette::Helper.label(0, :boolean) # => <span class="badge" style="background-color: #91E391; color: #000;">0</span>
+  	StylePalette::Helper.label("no", :boolean) # => <span class="badge" style="background-color: #91E391; color: #000;">no</span>
+  	StylePalette::Helper.label("yes", :boolean) # => <span class="badge" style="background-color: #E68585; color: #000;">yes</span>
+  	StylePalette::Helper.label(true, :boolean) # => <span class="badge" style="background-color: #E68585; color: #000;">true</span>
 
 
 

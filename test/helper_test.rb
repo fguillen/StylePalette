@@ -6,6 +6,6 @@ class HelperTest < MiniTest::Unit::TestCase
   end
 
   def test_label
-    assert_equal("<span class=\"label\" style=\"style 10\">a</span>", StylePalette::Helper.label("a", :tags))
+    assert_equal("<span class=\"badge\" style=\"style 10\">a</span>", StylePalette::Helper.label("a", :tags))
   end
 end
