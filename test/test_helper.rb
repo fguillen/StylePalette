@@ -1,5 +1,5 @@
-require "minitest/unit"
 require "minitest/autorun"
+require "minitest/unit"
 require "mocha/setup"
 
 require_relative "../lib/style_palette"
