@@ -22,8 +22,8 @@ You can check your _style palettes_ in the [StylePaletteGallery](http://stylepal
 
     StylePalette.brush("cat", :tags).background # => #f5abd5
     StylePalette.brush("cat", :tags).foreground # => #000
-    StylePalette::Helper.style("cat", :tags) # => background-color: #f5abd5; color: #000;
-    StylePalette::Helper.label("cat", :tags) # => <span class="badge" style="background-color: #f5abd5; color: #000;">cat</span>
+    StylePalette::Helper.style("cat", :tags) # => color: #f5abd5;
+    StylePalette::Helper.label("cat", :tags) # => <span class="badge" style="color: #f5abd5;">cat</span>
 
 ## Configuration & Initialization
 
@@ -31,16 +31,16 @@ Create a _json_ file with the name of the **palettes** and with an array of _col
 
     {
       "states": [
-        { "style": "background-color: #cd8745; color: #000;" },
-        { "style": "background-color: #82d37c; color: #000;" },
-        { "style": "background-color: #81dbde; color: #000;" }
+        { "style": "color: #cd8745;" },
+        { "style": "color: #82d37c;" },
+        { "style": "color: #81dbde;" }
       ],
 
       "tags": [
-        { "style": "background-color: #f5acb0; color: #000;" },
-        { "style": "background-color: #f5abd5; color: #000;" },
-        { "style": "background-color: #e7abf5; color: #000;" },
-        { "style": "background-color: #b2a6f5; color: #000;" }
+        { "style": "color: #f5acb0;" },
+        { "style": "color: #f5abd5;" },
+        { "style": "color: #e7abf5;" },
+        { "style": "color: #b2a6f5;" }
       ]
     }
 
@@ -74,7 +74,7 @@ Helper:
     def render_label(word, palette_name)
       StylePalette::Helper.label(word, palette_name).html_safe
     end
-    
+
     def render_labels(words, palette_name)
       words.map { |e| render_label e, palette_name }.join(" ").html_safe
     end
@@ -146,6 +146,17 @@ Also check the next examples:
   	StylePalette::Helper.label(true, :boolean) # => <span class="badge" style="background-color: #E68585; color: #000;">true</span>
 
 
+### Other structures
 
+We can use another structures that are not just simple `style`:
 
+    // style_palettes.json
+    "categories": [
+        { "name": "primary", "color": "#673ab7" },
+        { "name": "success", "color": "#32ab13" },
+        { "name": "danger", "color": "#f02769" }
+    ],
 
+    // Other place
+    StylePalette.brush("word", :categories).name # => primary
+    StylePalette.brush("word", :categories).color # => "#673ab7"
