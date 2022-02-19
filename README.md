@@ -20,6 +20,7 @@ You can check your _style palettes_ in the [StylePaletteGallery](http://stylepal
 
     StylePalette.brush(<word>, <palette_name>)
 
+    StylePalette.brush("cat", :tags).style #=> "color: #f5abd5;"
     StylePalette.brush("cat", :tags).background # => #f5abd5
     StylePalette.brush("cat", :tags).foreground # => #000
     StylePalette::Helper.style("cat", :tags) # => color: #f5abd5;
