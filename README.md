@@ -73,7 +73,7 @@ Helper:
 
     # app/helpers/application_helper.rb
     def render_label(word, palette_name)
-      StylePalette::Helper.label(word, palette_name).html_safe
+      StylePalette::Helper.label(h(word), palette_name).html_safe
     end
 
     def render_labels(words, palette_name)
